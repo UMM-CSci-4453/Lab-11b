@@ -50,7 +50,14 @@ Generate table of `i.generation` and `count(i)` for all individuals having total
 
 How do we find parents of individuals?
 
-Find individual in generation 27 that has total error 11.
+Find the one individual in generation 27 that has total error 11.
 
 Find the parents of that individual.
 
+Find the grandparents (use `[:ParentOf*2]` to say you want to go back two steps)
+
+Find all ancestors back up to 5 generations (use `[:ParentOf*0..5]`)
+
+Lots of duplicates – use `return distinct p` to tidy that up.
+
+Make table of `p.generation` and `count(p)` going back 5 generations. Note that this doesn't double at each generation like you might expect. Some of that is mutation (single parent) and some is self-cross (same individual is both parents).
